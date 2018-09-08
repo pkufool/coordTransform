@@ -137,4 +137,4 @@ if __name__ == '__main__':
     result5 = bd09_to_wgs84(lng, lat)
     result6 = wgs84_to_bd09(lng, lat)
 
-    print result1, result2, result3, result4, result5, result6 
+    print (result1, result2, result3, result4, result5, result6)

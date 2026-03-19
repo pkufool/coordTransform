@@ -37,6 +37,21 @@ result6 = ct.wgs84_to_bd09(lng, lat)
 print (result1, result2, result3, result4, result5, result6)
 ```
 
+批量调用
+========
+当输入为批量数据时，Python 侧会自动调用 C 批量实现（若已编译），单点调用仍走纯 Python 版本。
+
+```
+# lngs/lats 并行列表或 numpy 数组
+lngs = [116.404, 117.2]
+lats = [39.915, 31.23]
+out_lngs, out_lats = ct.wgs84_to_gcj02(lngs, lats)
+
+# 点对列表 (lng, lat)
+points = [(116.404, 39.915), (117.2, 31.23)]
+out_points = ct.wgs84_to_gcj02(points)
+```
+
 坐标系简介
 ========
 - WGS－84原始坐标系，一般用国际GPS纪录仪记录下来的经纬度，通过GPS定位拿到的原始经纬度，Google和高德地图定位的的经纬度（国外）都是基于WGS－84坐标系的；但是在国内是不允许直接用WGS84坐标系标注的，必须经过加密后才能使用。

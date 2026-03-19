@@ -22,7 +22,7 @@ EXT_MODULES = [
 
 setup(
     name="coordTransform",
-    version="0.2.0",
+    version="0.2.1",
     description="Coordinate transformation for maps",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
